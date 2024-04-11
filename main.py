@@ -1,17 +1,8 @@
 import tkinter
 from tkinter import messagebox, ttk
 
-
-
-
-
-
 root=tkinter.Tk()
 root.geometry("800x1000")
-
-
-
-
 
 
 
@@ -42,40 +33,15 @@ def OnClick_Submit():
     "brand": brand
  }
 
-
-
-
-
-
-
-
  if budget and size and county and miles and lease_own and exotic and year and gas and brand:
      messagebox.showinfo("Status", "Data Submitted")
      open_second_page()
-
-
  else:
      messagebox.showwarning("Warning","Please Fill all the Fields")
 
 
 
-
-
-
-
-
 root.title("Car Questionnaire")
-
-
-
-
-
-
-
-
-
-
-
 
 
 
