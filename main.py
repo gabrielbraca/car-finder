@@ -1,5 +1,6 @@
 import tkinter
 from tkinter import messagebox, ttk
+import csv
 
 root=tkinter.Tk()
 root.geometry("800x1000")
@@ -141,7 +142,18 @@ def open_second_page():
    second_page.title("Car")
    label = tkinter.Label(root, text="Next")
    label.pack()
+with open('Gooder file for python - Sheet1.csv','r') as csv_file:
+    csv_reader = csv.DictReader(csv_file)
 
+    with open('new_sheets.csv', 'w') as new_file:
+        fieldnames = ['Make','Link','Price','Model','Year','Body type','Location','Sports/exotic','Fuel type']
+
+        csv_writer = csv.DictWriter(new_file, fieldnames = fieldnames, delimiter= '\t')
+
+        csv_writer.writeheader()
+
+        for line in csv_reader:
+            csv_writer.writerow(line)
 
 
 submit_button=tkinter.Button(root,text='Submit',command=lambda: OnClick_Submit() , fg='red', font=("Times New Roman", 12))
