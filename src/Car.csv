@@ -1,23 +1,23 @@
 Make,Link,Price,Model,Year,Body type,Location,Sports/exotic,Fuel type
 Mazda,Mazda Dealership 1,20k,CX-3,2021,SUV,Bergen,No,Gas
-Mazda,Mazda Dealership 1,31k,CX-30 ,2024,SUV,Bergen,No,Gas
+Mazda,Mazda Dealership 1,31k,CX-30,2024,SUV,Bergen,No,Gas
 Mazda,Mazda Dealership 1,27k,Mazda3,2024,Sedan,Bergen,No,Gas
 Mazda,Mazda Dealership 2,20k,Mazda3,2022,Sedan,Passaic,No,Gas
 Mazda,Mazda Dealership 2,20k,Mazda6,2021,Sedan,Passaic,No,Gas
-Mazda,Mazda Dealership 2,27k,Mazda 2.5 S Preffered  ,2024,Sedan,Passaic,No,Gas
-Porsche,Porsche Dealership 1,150k,Taycan GTS ,2024,Wagon,Morris,Yes,Electric
+Mazda,Mazda Dealership 2,27k,Mazda 2.5 S Preffered ,2024,Sedan,Passaic,No,Gas
+Porsche,Porsche Dealership 1,150k,Taycan GTS,2024,Wagon,Morris,Yes,Electric
 Porsche,Porsche Dealership 1,130k,Porsche Panamera,2024,Sedan,Morris,Yes,Gas
 Porsche,Porsche Dealership 1,80k,Macan T,2024,SUV,Morris,Yes,Hybrid
 Porsche,Porsche Dealership 2,120k,Panamera 4 Platinum Edition,2023,Sedan,Bergen,Yes,Gas
-Porsche,Porsche Dealership 2,70k,Macan ,2024,SUV,Bergen,Yes,Gas
+Porsche,Porsche Dealership 2,70k,Macan,2024,SUV,Bergen,Yes,Gas
 Porsche,Porsche Dealership 2,75k,Macan,2024,SUV,Bergen,Yes,Gas
-Volvo,https://www.prestigevolvo.com/,30k,XC90 T6,2018,SUV,Morris,No,Gas
+Volvo,https://www.prestigevolvo.com/,40k,XC90 T6 Inscription,2022,SUV,Morris,No,Gas
 Volvo,https://www.prestigevolvo.com/,55k,S60 Recharge Plug-In,2024,Sedan,Morris,No,Hybrid
 Volvo,https://www.prestigevolvo.com/,40k,2023 Volvo XC40 Recharge Pure Electric Plus,2023,SUV,Morris,No,Electric
 Volvo,Volvo Dealership 2,70k,S90 Recharge Plug-In Hybrid T8 Ultimate,2024,Sedan,Bergen,No,Hybrid
 Volvo,Volvo Dealership 2,55k,XC90 B5 Core Bright,2024,SUV,Bergen,No,Gas
 Volvo,Volvo Dealership 2,90k,XC90 Recharge Plug-In Hybrid T8 Ultimate Bright 7-Seater,2024,SUV,Bergen,No,Hybrid
-Ford ,Ford Dealership 1,40k,Ford Transit Connect XL,2023,Van,Morris,No,Gas
+Ford,Ford Dealership 1,40k,Ford Transit Connect XL,2023,Van,Morris,No,Gas
 Ford,Ford Dealership 1,45k,Escape SEL Plug-In Hybrid,2023,SUV,Morris,No,Hybrid
 Ford,Ford Dealership 1,30k,Transit Connect XL,2023,Pick-up Truck,Morris,No,Gas
 Ford,Ford Dealership 2,30k,Bronco Sport Big Bend,2024,SUV,Bergen,Yes,Gas

@@ -21,6 +21,7 @@ def OnClick_Submit():
  gas = gas_textbox.get()
  brand = brand_textbox.get()
 
+# Made a Dictionary to repeat responses back to you almost as a way of saying are you sure?
  user_choices["Budget"] = budget
  user_choices["Size"] = size
  user_choices["County"] = county
@@ -29,8 +30,11 @@ def OnClick_Submit():
  user_choices["Gas"] = gas
  user_choices["Brand"] = brand
 
+# Checks if user answered all questions
  if all(user_choices.values()):
      messagebox.showinfo("Status", "Data Submitted")
+
+     # Prints dictionary on second page
      open_second_page(user_choices)
  else:
      messagebox.showwarning("Warning","Please Fill all the Fields")
@@ -38,7 +42,7 @@ def OnClick_Submit():
 # budget
 budget_label=tkinter.Label(root,text="1. Enter estimated car budget (in dollars):", fg='dark blue', font=("Times New Roman", 12))
 budget_label.pack(anchor=tkinter.W)
-choices=['10k-20k', '20k-40k', '50k-70k', '70k-80k', '85k-100k', '100k+']
+choices=['10k-20k', '20k-40k', '40k-60k', '60k-85k', '85k-100k', '100k+']
 budget_textbox=ttk.Combobox(root, values=choices)
 budget_textbox.pack(anchor=tkinter.W)
 budget_textbox.pack()
