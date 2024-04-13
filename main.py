@@ -54,17 +54,6 @@ choices=['Morris' , 'Essex', 'Bergen']
 county_textbox=ttk.Combobox(root, values=choices)
 county_textbox.pack(anchor=tkinter.W)
 
-miles_label=tkinter.Label(root,text="5. Mileage:", fg='dark blue', font=("Times New Roman", 12))
-miles_label.pack(anchor=tkinter.W)
-choices=['under 10k' , '10k-20k', '20k-30k', '30k-40k', '40k-50k', '50k-60k', '60k-70k', '70k-80k', '80k-90k', '90k-100k', '100k+']
-miles_textbox=ttk.Combobox(root, values=choices)
-miles_textbox.pack(anchor=tkinter.W)
-
-lease_own_label=tkinter.Label(root,text="7. Lease or own:", fg='dark blue', font=("Times New Roman", 12))
-lease_own_label.pack(anchor=tkinter.W)
-choices=['lease', 'own']
-lease_own_textbox=ttk.Combobox(root, values=choices)
-lease_own_textbox.pack(anchor=tkinter.W)
 
 exotic_label=tkinter.Label(root,text="8. Do you liked exotic cars?:", fg='dark blue', font=("Times New Roman", 12))
 exotic_label.pack(anchor=tkinter.W)
@@ -101,7 +90,7 @@ def open_second_page(user_choices):
        label.pack()
 
     # reads the file
-   with open('Gooder file for python - Sheet1.csv','r') as csv_file:
+   with open('src/Gooder file for python - Sheet1.csv', 'r') as csv_file:
        csv_reader = csv.DictReader(csv_file)
 
        for line in csv_reader:

@@ -1,0 +1,55 @@
+Make,Link,Price,Model,Year,Body type,Location,Sports/exotic,Fuel type
+Mazda,Mazda Dealership 1,20k,CX-3,2021,SUV,Bergen,No,Gas
+Mazda,Mazda Dealership 1,31k,CX-30 ,2024,SUV,Bergen,No,Gas
+Mazda,Mazda Dealership 1,27k,Mazda3,2024,Sedan,Bergen,No,Gas
+Mazda,Mazda Dealership 2,20k,Mazda3,2022,Sedan,Passaic,No,Gas
+Mazda,Mazda Dealership 2,20k,Mazda6,2021,Sedan,Passaic,No,Gas
+Mazda,Mazda Dealership 2,27k,Mazda 2.5 S Preffered  ,2024,Sedan,Passaic,No,Gas
+Porsche,Porsche Dealership 1,150k,Taycan GTS ,2024,Wagon,Morris,Yes,Electric
+Porsche,Porsche Dealership 1,130k,Porsche Panamera,2024,Sedan,Morris,Yes,Gas
+Porsche,Porsche Dealership 1,80k,Macan T,2024,SUV,Morris,Yes,Hybrid
+Porsche,Porsche Dealership 2,120k,Panamera 4 Platinum Edition,2023,Sedan,Bergen,Yes,Gas
+Porsche,Porsche Dealership 2,70k,Macan ,2024,SUV,Bergen,Yes,Gas
+Porsche,Porsche Dealership 2,75k,Macan,2024,SUV,Bergen,Yes,Gas
+Volvo,https://www.prestigevolvo.com/,30k,XC90 T6,2018,SUV,Morris,No,Gas
+Volvo,https://www.prestigevolvo.com/,55k,S60 Recharge Plug-In,2024,Sedan,Morris,No,Hybrid
+Volvo,https://www.prestigevolvo.com/,40k,2023 Volvo XC40 Recharge Pure Electric Plus,2023,SUV,Morris,No,Electric
+Volvo,Volvo Dealership 2,70k,S90 Recharge Plug-In Hybrid T8 Ultimate,2024,Sedan,Bergen,No,Hybrid
+Volvo,Volvo Dealership 2,55k,XC90 B5 Core Bright,2024,SUV,Bergen,No,Gas
+Volvo,Volvo Dealership 2,90k,XC90 Recharge Plug-In Hybrid T8 Ultimate Bright 7-Seater,2024,SUV,Bergen,No,Hybrid
+Ford ,Ford Dealership 1,40k,Ford Transit Connect XL,2023,Van,Morris,No,Gas
+Ford,Ford Dealership 1,45k,Escape SEL Plug-In Hybrid,2023,SUV,Morris,No,Hybrid
+Ford,Ford Dealership 1,30k,Transit Connect XL,2023,Pick-up Truck,Morris,No,Gas
+Ford,Ford Dealership 2,30k,Bronco Sport Big Bend,2024,SUV,Bergen,Yes,Gas
+Ford,Ford Dealership 2,60k,Explorer ST ,2023,SUV,Bergen,No,Gas
+Ford,Ford Dealership 2,70k,F-150 Raptor SuperCrew,2024,Pick-up Truck,Bergen,No,Gas
+Toyota,Toyota Dealership 1,55k,Sienna Limited Minivan,2024,Mini-van,Essex,No,Hybrid
+Toyota,Toyota Dealership 1,50k,4Runner TRD Off-Road Premium,2024,SUV,Essex,No,Gas
+Toyota,Toyota Dealership 1,50k,Grand Highlander Hybrid XLE Sport Utility,2024,SUV,Essex,No,Hybrid
+Toyota,Toyota Dealership 2,30k,Camry Hybrid SE,2023,Sedan,Morris,No,Hybrid
+Toyota,Toyota Dealership 2,30k,RAV4 XLE PREM AWD,2021,SUV,Morris,No,Gas
+Toyota,Toyota Dealership 2,35k,Prius Prime SE Hybrid,2024,Sedan,Morris,No,Hybrid
+Lamborghini,Lamborghini Dealership ,600k,Aventador SVJ Base,2019,Roadster,Bergen,Yes,Gas
+Lamborghini,Lamborghini Dealership ,400k,Huracan STO Base,2021,Convertible,Bergen,Yes,Gas
+Lamborghini,Lamborghini Dealership,300k,Urus ,2023,SUV,Bergen,Yes,Gas
+Tesla,Tesla Dealership,80k,Model X,2024,SUV,Bergen,No,Electric
+Tesla,Tesla Dealership,75k,Model S,2024,Sedan,Bergen,No,Electric
+Tesla,Tesla Dealership,40k,Model 3,2024,Sedan,Bergen,No,Electric
+Honda,Honda Dealership 1,50k,Odyssey Touring Auto,2024,Mini-van,Morris ,No,Gas
+Honda,Honda Dealership 1,40k,Odyssey EX-L Auto,2024,Mini-van,Morris ,No,Gas
+Honda,Honda Dealership 1,35k,Accord Hybrid Sport-L,2023,Sedan,Morris,No,Hybrid
+Honda,Honda Dealership 2,30k,HR-V LX,2024,SUV,Bergen,No,Gas
+Honda,Honda Dealership 2,45k,Ridgeline RTL,2024,Pick-up Truck,Bergen,No,Gas
+Honda,Honda Dealership 2,45k,Pilot EX-L,2024,SUV,Bergen,No,Gas
+Chevrolet,Chevrolet Dealership 1,80k,Corvette Stingray,2024,Convertible,Morris,Yes,Gas
+Chevrolet,Chevrolet Dealership 1,30k,Colorado,2024,Pick-up Truck,Morris,No,Gas
+Chevrolet,Chevrolet Dealership 1,55k,Silverado 3500,2024,Pick-up Truck,Morris,No,Gas
+Chevrolet,Chevrolet Dealership 2,30k,Bolt EUV,2024,SUV,Bergen,No,Electric
+Chevrolet,Chevrolet Dealership 2,25k,Chevrolet Trailblazer,2024,SUV,Bergen,No,Gas
+Chevrolet,Chevrolet Dealership 2,20k,Chevrolet Trax,2024,SUV,Bergen,No,Gas
+Nissan,Nissan Dealership 1,15k,ROGUE SPORT S,2019,SUV,Morris,No,Gas
+Nissan,Nissan Dealership 1,15k,VERSA 1.6 SV,2021,Sedan,Morris,No,Gas
+Nissan,Nissan Dealership 1,40k,LEAF SV PLUS,2024,Sedan,Morris,No,Electric
+Nissan,Nissan Dealership 2,80k,Armada Platinum,2024,SUV,Morris,No,Gas
+Nissan,Nissan Dealership 2,45k,ARIYA,2023,SUV,Morris,No,Electric
+Nissan,Nissan Dealership 2,45k,Pathfinder SL,2024,SUV,Morris,No,Gas
