@@ -2,7 +2,6 @@ import tkinter
 from tkinter import messagebox, ttk
 import csv
 
-
 # stores the choices that the user inputs
 user_choices = {}
 highlight_color = "#333333"
