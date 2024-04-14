@@ -88,7 +88,7 @@ def OnClick_Submit():
 
  # Checks if all fields are filled
  if all(user_choices.values()):
-     messagebox.showinfo("Status", "Data Submitted")
+     print('good')
  else:
      messagebox.showwarning("Warning", "Please Fill all the Fields")
 

@@ -7,11 +7,13 @@ import csv
 user_choices = {}
 highlight_color = "#333333"
 
-
 # window setup
 root = tkinter.Tk()
 root.geometry("800x1000")
 root.title("Car Questionnaire")
+# Adds a picture to top left
+img = tkinter.PhotoImage(file=r"C:\Users\Sattara\OneDrive\Pictures\Car.png")
+root.iconphoto(False, img)
 # Added this line to set the background color
 root.configure(bg='#181818')
 # Function to load data from CSV
@@ -22,7 +24,6 @@ def load_data(csv_file):
         for row in csv_reader:
             data.append(row)
     return data
-
 
 # Load data from CSV
 car_data = load_data('Car.csv')
