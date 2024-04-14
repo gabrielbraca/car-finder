@@ -11,7 +11,7 @@ root = tkinter.Tk()
 root.geometry("800x1000")
 root.title("Car Questionnaire")
 # Adds a picture to top left
-img = tkinter.PhotoImage(file=r"Car.png")
+img = tkinter.PhotoImage(file=r"car.png")
 root.iconphoto(False, img)
 # Added this line to set the background color
 root.configure(bg='#181818')
@@ -28,7 +28,6 @@ def load_data(csv_file):
 car_data = load_data('Car.csv')
 # Lighter shade of gray to highlight the letters
 fg_color = "#CCCCCC"
-
 
 def OnClick_Submit():
  budget = budget_textbox.get()
@@ -55,7 +54,6 @@ def OnClick_Submit():
  user_choices["Fuel"] = gas
  user_choices["Brand"] = brand
  print("User Choices:", user_choices)
-
 
  # Filter data based on user choices
  filtered_data = []
@@ -144,7 +142,6 @@ choices=['Porsche', 'Volvo', 'Ford', 'Toyota', 'Lamborghini','Tesla','Honda', 'C
 brand_textbox=ttk.Combobox(root, values=choices)
 brand_textbox.pack(anchor=tkinter.W)
 
-
 def open_second_page(user_choices, filtered_data):
    second_page = tkinter.Tk()
    second_page.geometry("800x1000")
@@ -187,11 +184,8 @@ def open_second_page(user_choices, filtered_data):
 
    second_page.mainloop()
 
-
-
 with open('Car.csv','r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
-
 
 # submit
 submit_button=tkinter.Button(root,text='Submit',command=OnClick_Submit , fg='red', font=("Comic Sans MS", 12), bg='black')
