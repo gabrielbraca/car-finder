@@ -12,7 +12,7 @@ root = tkinter.Tk()
 root.geometry("800x1000")
 root.title("Car Questionnaire")
 # Adds a picture to top left
-img = tkinter.PhotoImage(file=r"C:\Users\Sattara\OneDrive\Pictures\Car.png")
+img = tkinter.PhotoImage(file=r"Car.png")
 root.iconphoto(False, img)
 # Added this line to set the background color
 root.configure(bg='#181818')
