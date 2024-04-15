@@ -164,7 +164,7 @@ def open_second_page(user_choices, filtered_data):
     second_page.geometry("800x1000")
     second_page.title("Car Answers")
     second_page.configure(bg='#1E1E1E')  # Set the background color of the second page
-    label = tkinter.Label(second_page, text="Next", bg='#181818', fg=fg_color)
+    label = tkinter.Label(second_page, bg='#181818', fg=fg_color)
     label.pack()
 
     # Show user choices
@@ -227,8 +227,10 @@ def display_car_info_text_widget(text_widget, car):
     text_widget.insert(tkinter.END, "Link: {}\n".format(car['Link']))
     text_widget.insert(tkinter.END, "\n")
 
+
 with open('Car.csv','r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
+
 # exit
 quit_button=tkinter.Button(root,text='Quit',command=root.quit , fg='red', font=("Comic Sans MS", 12), bg='black')
 quit_button.pack()
