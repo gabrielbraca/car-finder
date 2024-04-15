@@ -116,7 +116,7 @@ budget_textbox.pack(anchor=tkinter.W)
 budget_textbox.pack()
 
 # body type
-size_label=tkinter.Label(root,text="2. Enter your preferred car size:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
+size_label=tkinter.Label(root,text="2. Enter your preferred car body type:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 size_label.pack(anchor=tkinter.W)
 choices=['SUV', 'Mini-van', 'Pick-up truck', 'Sedan', 'Roadster', 'Convertible', 'Wagon', 'Van']
 size_textbox=ttk.Combobox(root, values=choices)
@@ -155,7 +155,7 @@ gas_textbox.pack(anchor=tkinter.W)
 # make
 brand_label=tkinter.Label(root,text="7. What Car brand do you prefer from the list?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 brand_label.pack(anchor=tkinter.W)
-choices=['Porsche', 'Volvo', 'Ford', 'Toyota', 'Lamborghini','Tesla','Honda', 'Chevrolet', 'Nissan', 'Mazda','Other']
+choices=['Porsche', 'Volvo', 'Ford', 'Toyota', 'Lamborghini','Tesla','Honda', 'Chevrolet', 'Nissan', 'Mazda']
 brand_textbox=ttk.Combobox(root, values=choices)
 brand_textbox.pack(anchor=tkinter.W)
 
@@ -238,11 +238,12 @@ def get_recommended_cars(user_choices, car_data):
 with open('Car.csv','r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
 
-# exit
-quit_button=tkinter.Button(root,text='Quit',command=root.quit , fg='red', font=("Comic Sans MS", 12), bg='black')
-quit_button.pack()
 
 # submit
 submit_button=tkinter.Button(root,text='Submit',command=OnClick_Submit , fg='red', font=("Comic Sans MS", 12), bg='black')
 submit_button.pack()
+
+# exit
+quit_button=tkinter.Button(root,text='Quit',command=root.quit , fg='red', font=("Comic Sans MS", 12), bg='black')
+quit_button.pack()
 root.mainloop()
