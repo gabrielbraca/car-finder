@@ -184,6 +184,8 @@ def open_second_page(user_choices, filtered_data):
     text_widget.insert(tkinter.END, "Exact Matches:\n\n")
 
     # Display exact matches
+
+    filtered_data= get_recommended_cars(user_choices, filtered_data)
     for car in filtered_data:
         display_car_info_text_widget(text_widget, car)
 
@@ -197,6 +199,19 @@ def open_second_page(user_choices, filtered_data):
     text_widget.config(state="disabled")
 
     second_page.mainloop()
+
+def display_car_info_text_widget(text_widget, car):
+    text_widget.insert(tkinter.END, "Brand: {}\n".format(car['Brand']))
+    text_widget.insert(tkinter.END, "Price: {}\n".format(car['Price']))
+    text_widget.insert(tkinter.END, "Model: {}\n".format(car['Model']))
+    text_widget.insert(tkinter.END, "Year: {}\n".format(car['Year']))
+    text_widget.insert(tkinter.END, "Size: {}\n".format(car['Size']))
+    text_widget.insert(tkinter.END, "County: {}\n".format(car['County']))
+    text_widget.insert(tkinter.END, "Exotic: {}\n".format(car['Exotic']))
+    text_widget.insert(tkinter.END, "Fuel: {}\n".format(car['Fuel']))
+    text_widget.insert(tkinter.END, "Link: {}\n".format(car['Link']))
+    text_widget.insert(tkinter.END, "\n")
+
 def get_recommended_cars(user_choices, car_data):
     recommended_cars = []
     for car in car_data:
@@ -215,17 +230,6 @@ def get_recommended_cars(user_choices, car_data):
 
     print("Recommended Cars:", recommended_cars)  # Debugging print statement
     return recommended_cars
-def display_car_info_text_widget(text_widget, car):
-    text_widget.insert(tkinter.END, "Brand: {}\n".format(car['Brand']))
-    text_widget.insert(tkinter.END, "Price: {}\n".format(car['Price']))
-    text_widget.insert(tkinter.END, "Model: {}\n".format(car['Model']))
-    text_widget.insert(tkinter.END, "Year: {}\n".format(car['Year']))
-    text_widget.insert(tkinter.END, "Size: {}\n".format(car['Size']))
-    text_widget.insert(tkinter.END, "County: {}\n".format(car['County']))
-    text_widget.insert(tkinter.END, "Exotic: {}\n".format(car['Exotic']))
-    text_widget.insert(tkinter.END, "Fuel: {}\n".format(car['Fuel']))
-    text_widget.insert(tkinter.END, "Link: {}\n".format(car['Link']))
-    text_widget.insert(tkinter.END, "\n")
 
 
 with open('Car.csv','r') as csv_file:
