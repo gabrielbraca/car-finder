@@ -91,7 +91,7 @@ def OnClick_Submit():
      messagebox.showwarning("Warning", "Please Fill all the Fields")
 
 # budget
-budget_label = tkinter.Label(root, text="1. Enter estimated car budget (in dollars):", fg=fg_color, font=("Comic Sans MS", 12), bg='#1E1E1E', highlightbackground=highlight_color, highlightcolor=highlight_color)
+budget_label = tkinter.Label(root, text="1. Enter estimated car budget (in dollars):", fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 budget_label.pack(anchor=tkinter.W)
 choices=['10k-20k', '20k-40k', '40k-60k', '60k-85k', '85k-100k', '100k-600k']
 budget_textbox=ttk.Combobox(root, values=choices)
@@ -99,14 +99,14 @@ budget_textbox.pack(anchor=tkinter.W)
 budget_textbox.pack()
 
 # body type
-size_label=tkinter.Label(root,text="2. Enter your preferred car size:",fg=fg_color, font=("Comic Sans MS", 12), bg='#1E1E1E', highlightbackground=highlight_color, highlightcolor=highlight_color)
+size_label=tkinter.Label(root,text="2. Enter your preferred car size:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 size_label.pack(anchor=tkinter.W)
 choices=['SUV', 'Mini-van', 'Pick-up truck', 'Sedan', 'Roadster', 'Convertible', 'Wagon', 'Van']
 size_textbox=ttk.Combobox(root, values=choices)
 size_textbox.pack(anchor=tkinter.W)
 
 # county
-county_label=tkinter.Label(root,text="3. Enter your county location:",fg=fg_color, font=("Comic Sans MS", 12), bg='#1E1E1E', highlightbackground=highlight_color, highlightcolor=highlight_color)
+county_label=tkinter.Label(root,text="3. Enter your county location:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 county_label.pack(anchor=tkinter.W)
 choices=['Morris' , 'Essex', 'Bergen', 'Passaic']
 county_textbox=ttk.Combobox(root, values=choices)
@@ -114,7 +114,7 @@ county_textbox.pack(anchor=tkinter.W)
 
 
 # exotic
-exotic_label=tkinter.Label(root,text="4. Do you like exotic cars?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#1E1E1E', highlightbackground=highlight_color, highlightcolor=highlight_color)
+exotic_label=tkinter.Label(root,text="4. Do you like exotic cars?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 exotic_label.pack(anchor=tkinter.W)
 choices=['Yes', 'No']
 exotic_textbox=ttk.Combobox(root, values=choices)
@@ -122,21 +122,21 @@ exotic_textbox.pack(anchor=tkinter.W)
 
 
 # year
-year_label=tkinter.Label(root,text="5. What year?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#1E1E1E', highlightbackground=highlight_color, highlightcolor=highlight_color)
+year_label=tkinter.Label(root,text="5. What year?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 year_label.pack(anchor=tkinter.W)
 choices=['2019','2020','2021','2022', '2023', '2024',]
 year_textbox=ttk.Combobox(root, values=choices)
 year_textbox.pack(anchor=tkinter.W)
 
 # gas type
-gas_label=tkinter.Label(root,text="6. Gas, Hybrid, or Electric?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#1E1E1E', highlightbackground=highlight_color, highlightcolor=highlight_color)
+gas_label=tkinter.Label(root,text="6. Gas, Hybrid, or Electric?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 gas_label.pack(anchor=tkinter.W)
 choices=['Hybrid', 'Electric', 'Gas']
 gas_textbox=ttk.Combobox(root, values=choices)
 gas_textbox.pack(anchor=tkinter.W)
 
 # make
-brand_label=tkinter.Label(root,text="7. What Car brand do you prefer from the list?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#1E1E1E', highlightbackground=highlight_color, highlightcolor=highlight_color)
+brand_label=tkinter.Label(root,text="7. What Car brand do you prefer from the list?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 brand_label.pack(anchor=tkinter.W)
 choices=['Porsche', 'Volvo', 'Ford', 'Toyota', 'Lamborghini','Tesla','Honda', 'Chevrolet', 'Nissan', 'Mazda','Other']
 brand_textbox=ttk.Combobox(root, values=choices)
@@ -147,13 +147,13 @@ def open_second_page(user_choices, filtered_data):
    second_page.geometry("800x1000")
    second_page.title("Car Answers")
    second_page.configure(bg='#1E1E1E')  # Set the background color of the second page
-   label = tkinter.Label(second_page, text="Next", bg='#1E1E1E', fg=fg_color)
+   label = tkinter.Label(second_page, text="Next", bg='#181818', fg=fg_color)
    label.pack()
 
    # this shows what the user inputs and prints it to the second page
    for key, value in user_choices.items():
        label_text = key + ": " + value
-       label = tkinter.Label(second_page, text=label_text, bg='#1E1E1E', fg=fg_color)
+       label = tkinter.Label(second_page, text=label_text, bg='#181818', fg=fg_color)
        label.pack()
 
    # Display the data in a text widget
