@@ -198,6 +198,9 @@ def open_second_page(user_choices, filtered_data):
     # Set the state back to disabled to make it read-only
     text_widget.config(state="disabled")
 
+    quit_button = tkinter.Button(second_page, text='Quit', command=second_page.quit, fg='red', font=("Comic Sans MS", 12), bg='black')
+    quit_button.pack()
+
     second_page.mainloop()
 
 def display_car_info_text_widget(text_widget, car):
