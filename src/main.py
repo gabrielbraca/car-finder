@@ -1,6 +1,7 @@
 import tkinter
 from tkinter import messagebox, ttk
 import csv
+from PIL import ImageTk,Image
 
 # stores the choices that the user inputs
 user_choices = {}
@@ -8,13 +9,31 @@ highlight_color = "#333333"
 
 # window setup
 root = tkinter.Tk()
-root.geometry("800x1000")
+root.geometry("800x800")
 root.title("Car Questionnaire")
+
 # Adds a picture to top left
 img = tkinter.PhotoImage(file=r"car.png")
 root.iconphoto(False, img)
+
+# Adds a Ford Picture
+my_img = ImageTk.PhotoImage(Image.open("imporannt.jpg"))
+my_label = tkinter.Label(image=my_img)
+my_label.pack()
+
+# Adds a Lamborghini Huracán Photo
+my_img2 = ImageTk.PhotoImage(Image.open("lamborghini-1819204_640.jpg"))
+my_label2 = tkinter.Label(image=my_img2)
+my_label2.pack()
+
+my_img3 = ImageTk.PhotoImage(Image.open("camaro-4331510_640.jpg"))
+my_label3 = tkinter.Label(image=my_img3)
+my_label3.pack()
+
+
 # Added this line to set the background color
 root.configure(bg='#181818')
+
 # Function to load data from CSV
 def load_data(csv_file):
     data = []
@@ -26,6 +45,7 @@ def load_data(csv_file):
 
 # Load data from CSV
 car_data = load_data('Car.csv')
+
 # Lighter shade of gray to highlight the letters
 fg_color = "#CCCCCC"
 
@@ -150,6 +170,7 @@ def open_second_page(user_choices, filtered_data):
    label = tkinter.Label(second_page, text="Next", bg='#181818', fg=fg_color)
    label.pack()
 
+
    # this shows what the user inputs and prints it to the second page
    for key, value in user_choices.items():
        label_text = key + ": " + value
@@ -186,6 +207,9 @@ def open_second_page(user_choices, filtered_data):
 
 with open('Car.csv','r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
+# exit
+quit_button=tkinter.Button(root,text='Quit',command=root.quit , fg='red', font=("Comic Sans MS", 12), bg='black')
+quit_button.pack()
 
 # submit
 submit_button=tkinter.Button(root,text='Submit',command=OnClick_Submit , fg='red', font=("Comic Sans MS", 12), bg='black')
