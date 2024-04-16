@@ -155,7 +155,7 @@ gas_textbox.pack(anchor=tkinter.W)
 # make
 brand_label=tkinter.Label(root,text="7. What Car brand do you prefer from the list?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 brand_label.pack(anchor=tkinter.W)
-choices=['Porsche', 'Volvo', 'Ford', 'Toyota', 'Lamborghini','Tesla','Honda', 'Chevrolet', 'Nissan', 'Mazda']
+choices=['Porsche', 'Volvo', 'Ford', 'Toyota', 'Lamborghini','Tesla','Honda', 'Chevrolet', 'Nissan', 'Mazda', 'Any']
 brand_textbox=ttk.Combobox(root, values=choices)
 brand_textbox.pack(anchor=tkinter.W)
 
@@ -184,7 +184,6 @@ def open_second_page(user_choices, filtered_data):
     text_widget.insert(tkinter.END, "Exact Matches:\n\n")
 
     # Display exact matches
-
     filtered_data= get_recommended_cars(user_choices, filtered_data)
     for car in filtered_data:
         display_car_info_text_widget(text_widget, car)
@@ -198,8 +197,10 @@ def open_second_page(user_choices, filtered_data):
     # Set the state back to disabled to make it read-only
     text_widget.config(state="disabled")
 
+    # Quit button for second page
     quit_button = tkinter.Button(second_page, text='Quit', command=second_page.quit, fg='red', font=("Comic Sans MS", 12), bg='black')
     quit_button.pack()
+
 
     second_page.mainloop()
 
@@ -235,15 +236,80 @@ def get_recommended_cars(user_choices, car_data):
     return recommended_cars
 
 
+def open_third_page():
+    third_page = tkinter.Toplevel()
+    third_page.geometry("800x800")
+    third_page.title("Body Types")
+    third_page.configure(bg='#1E1E1E')  # Set the background color of the second page
+
+
+    # Load the sedan image
+    sedan_img = ImageTk.PhotoImage(Image.open("Sedan.png"))
+
+    # Create a Label widget to display the image
+    sedan_label = tkinter.Label(third_page, image=sedan_img, bg='#1E1E1E')
+    sedan_label.pack()
+
+    # Ensure the image is retained by storing a reference
+    sedan_label.image = sedan_img
+
+    # Load the suv image
+    suv_img = ImageTk.PhotoImage(Image.open("SUV.png"))
+
+    # Create a Label widget to display the image
+    suv_label = tkinter.Label(third_page, image=suv_img, bg='#1E1E1E')
+    suv_label.pack()
+
+    # Ensure the image is retained by storing a reference
+    suv_label.image = suv_img
+
+    # Load the convertible image
+    convertible_img = ImageTk.PhotoImage(Image.open("Convertible.png"))
+
+    # Create a Label widget to display the image
+    convertible_label = tkinter.Label(third_page, image=convertible_img, bg='#1E1E1E')
+    convertible_label.pack()
+
+    # Ensure the image is retained by storing a reference
+    convertible_label.image = convertible_img
+
+    wagon_img = ImageTk.PhotoImage(Image.open("Wagon.png"))
+
+    # Create a Label widget to display the image
+    wagon_label = tkinter.Label(third_page, image=wagon_img, bg='#1E1E1E')
+    wagon_label.pack()
+
+    # Ensure the image is retained by storing a reference
+    wagon_label.image = wagon_img
+
+    minivan_img = ImageTk.PhotoImage(Image.open("minivan.png"))
+
+    # Create a Label widget to display the image
+    minivan_label = tkinter.Label(third_page, image=minivan_img, bg='#1E1E1E')
+    minivan_label.pack()
+
+    # Ensure the image is retained by storing a reference
+    minivan_label.image = minivan_img
+
+    # Display body types label
+    body_types_label = tkinter.Label(third_page, text="Body Types:", fg=fg_color, font=("Comic Sans MS", 12), bg='#1E1E1E', highlightbackground=highlight_color, highlightcolor=highlight_color)
+    body_types_label.pack()
+
+
 with open('Car.csv','r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
 
 
-# submit
+
+# submit for first page
 submit_button=tkinter.Button(root,text='Submit',command=OnClick_Submit , fg='red', font=("Comic Sans MS", 12), bg='black')
 submit_button.pack()
 
-# exit
+# Button to open second page showing body types
+body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ", command=open_third_page, fg='blue', font=("Comic Sans MS", 12), bg='black')
+body_types_button.pack()
+
+# quit button for first page
 quit_button=tkinter.Button(root,text='Quit',command=root.quit , fg='red', font=("Comic Sans MS", 12), bg='black')
 quit_button.pack()
 root.mainloop()
