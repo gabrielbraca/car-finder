@@ -1,7 +1,7 @@
 import tkinter
 from tkinter import messagebox, ttk
 import csv
-from PIL import ImageTk,Image
+from PIL import Image, ImageTk
 
 # stores the choices that the user inputs
 user_choices = {}
@@ -238,7 +238,7 @@ def get_recommended_cars(user_choices, car_data):
 
 def open_third_page():
     third_page = tkinter.Toplevel()
-    third_page.geometry("800x800")
+    third_page.geometry("800x1000")
     third_page.title("Body Types")
     third_page.configure(bg='#1E1E1E')  # Set the background color of the second page
 
@@ -276,7 +276,7 @@ def open_third_page():
     wagon_img = ImageTk.PhotoImage(Image.open("Wagon.png"))
 
     # Create a Label widget to display the image
-    wagon_label = tkinter.Label(third_page, image=wagon_img, bg='#1E1E1E')
+    wagon_label = tkinter.Label(third_page, image= wagon_img, bg='#1E1E1E')
     wagon_label.pack()
 
     # Ensure the image is retained by storing a reference
@@ -285,11 +285,31 @@ def open_third_page():
     minivan_img = ImageTk.PhotoImage(Image.open("minivan.png"))
 
     # Create a Label widget to display the image
-    minivan_label = tkinter.Label(third_page, image=minivan_img, bg='#1E1E1E')
+    minivan_label = tkinter.Label(third_page, image= minivan_img, bg='#1E1E1E')
     minivan_label.pack()
 
     # Ensure the image is retained by storing a reference
     minivan_label.image = minivan_img
+
+    # Load the roadster image
+    roadster_img = ImageTk.PhotoImage(Image.open("roadster.png"))
+
+    # Create a Label widget to display the image
+    roadster_label = tkinter.Label(third_page, image=roadster_img, bg='#1E1E1E')
+    roadster_label.pack()
+
+    # Ensure the image is retained by storing a reference
+    roadster_label.image = roadster_img
+
+    # Load the Pickup Truck image
+    Pickup_truck_img = ImageTk.PhotoImage(Image.open("Pickup.png"))
+
+    # Create a Label widget to display the image
+    Pickup_truck_label = tkinter.Label(third_page, image= Pickup_truck_img, bg='#1E1E1E')
+    Pickup_truck_label.pack()
+
+    # Ensure the image is retained by storing a reference
+    Pickup_truck_label.image = Pickup_truck_img
 
     # Display body types label
     body_types_label = tkinter.Label(third_page, text="Body Types:", fg=fg_color, font=("Comic Sans MS", 12), bg='#1E1E1E', highlightbackground=highlight_color, highlightcolor=highlight_color)
