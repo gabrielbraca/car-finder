@@ -240,9 +240,11 @@ def get_recommended_cars(user_choices, car_data):
 
 def open_third_page():
     third_page = tkinter.Toplevel()
-    third_page.geometry("800x800")
+    third_page.geometry("2000x2000")
     third_page.title("Body Types")
     third_page.configure(bg='#1E1E1E')  # Set the background color of the second page
+    back2_button = tkinter.Button(third_page, text='Back', command=third_page.destroy, fg='red', font=("Comic Sans MS", 12), bg='black')
+    back2_button.pack()
 
 
     # Load the sedan image
@@ -266,14 +268,14 @@ def open_third_page():
     suv_label.image = suv_img
 
     # Load the convertible image
-    convertible_img = ImageTk.PhotoImage(Image.open("Convertible.png"))
+    Convertible_img = ImageTk.PhotoImage(Image.open("Convertible.png"))
 
     # Create a Label widget to display the image
-    convertible_label = tkinter.Label(third_page, image=convertible_img, bg='#1E1E1E')
-    convertible_label.pack()
+    Convertible_label = tkinter.Label(third_page, image=Convertible_img, bg='#1E1E1E')
+    Convertible_label.pack()
 
     # Ensure the image is retained by storing a reference
-    convertible_label.image = convertible_img
+    Convertible_label.image = Convertible_img
 
 
     minivan_img = ImageTk.PhotoImage(Image.open("minivan.png"))
@@ -284,6 +286,15 @@ def open_third_page():
 
     # Ensure the image is retained by storing a reference
     minivan_label.image = minivan_img
+
+    Pickup_img = ImageTk.PhotoImage(Image.open("Pickup.png"))
+
+    # Create a Label widget to display the image
+    Pickup_label = tkinter.Label(third_page, image=Pickup_img, bg='#1E1E1E')
+    Pickup_label.pack()
+
+    # Ensure the image is retained by storing a reference
+    Pickup_label.image = Pickup_img
 
 
 
@@ -297,7 +308,7 @@ submit_button=tkinter.Button(root,text='Submit',command=OnClick_Submit , fg='red
 submit_button.pack()
 
 # Button to open second page showing body types
-body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ", command=open_third_page, fg='blue', font=("Comic Sans MS", 12), bg='black')
+body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ", command=open_third_page, fg='Yellow', font=("Comic Sans MS", 12), bg='black')
 body_types_button.pack()
 
 
