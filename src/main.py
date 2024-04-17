@@ -1,7 +1,7 @@
 import tkinter
 from tkinter import messagebox, ttk
 import csv
-from PIL import Image, ImageTk
+from PIL import ImageTk,Image
 
 # stores the choices that the user inputs
 user_choices = {}
@@ -118,7 +118,7 @@ budget_textbox.pack()
 # body type
 size_label=tkinter.Label(root,text="2. Enter your preferred car body type:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 size_label.pack(anchor=tkinter.W)
-choices=['SUV', 'Mini-van', 'Pick-up truck', 'Sedan', 'Roadster', 'Convertible', 'Wagon', 'Van']
+choices=['SUV', 'Mini-van', 'Pick-up truck', 'Sedan', 'Convertible', 'Van']
 size_textbox=ttk.Combobox(root, values=choices)
 size_textbox.pack(anchor=tkinter.W)
 
@@ -201,6 +201,8 @@ def open_second_page(user_choices, filtered_data):
     quit_button = tkinter.Button(second_page, text='Quit', command=second_page.quit, fg='red', font=("Comic Sans MS", 12), bg='black')
     quit_button.pack()
 
+    back_button = tkinter.Button(second_page, text='Back', command=second_page.destroy, fg='red', font=("Comic Sans MS", 12), bg='black')
+    back_button.pack()
 
     second_page.mainloop()
 
@@ -238,7 +240,7 @@ def get_recommended_cars(user_choices, car_data):
 
 def open_third_page():
     third_page = tkinter.Toplevel()
-    third_page.geometry("800x1000")
+    third_page.geometry("800x800")
     third_page.title("Body Types")
     third_page.configure(bg='#1E1E1E')  # Set the background color of the second page
 
@@ -273,47 +275,16 @@ def open_third_page():
     # Ensure the image is retained by storing a reference
     convertible_label.image = convertible_img
 
-    wagon_img = ImageTk.PhotoImage(Image.open("Wagon.png"))
-
-    # Create a Label widget to display the image
-    wagon_label = tkinter.Label(third_page, image= wagon_img, bg='#1E1E1E')
-    wagon_label.pack()
-
-    # Ensure the image is retained by storing a reference
-    wagon_label.image = wagon_img
 
     minivan_img = ImageTk.PhotoImage(Image.open("minivan.png"))
 
     # Create a Label widget to display the image
-    minivan_label = tkinter.Label(third_page, image= minivan_img, bg='#1E1E1E')
+    minivan_label = tkinter.Label(third_page, image=minivan_img, bg='#1E1E1E')
     minivan_label.pack()
 
     # Ensure the image is retained by storing a reference
     minivan_label.image = minivan_img
 
-    # Load the roadster image
-    roadster_img = ImageTk.PhotoImage(Image.open("roadster.png"))
-
-    # Create a Label widget to display the image
-    roadster_label = tkinter.Label(third_page, image=roadster_img, bg='#1E1E1E')
-    roadster_label.pack()
-
-    # Ensure the image is retained by storing a reference
-    roadster_label.image = roadster_img
-
-    # Load the Pickup Truck image
-    Pickup_truck_img = ImageTk.PhotoImage(Image.open("Pickup.png"))
-
-    # Create a Label widget to display the image
-    Pickup_truck_label = tkinter.Label(third_page, image= Pickup_truck_img, bg='#1E1E1E')
-    Pickup_truck_label.pack()
-
-    # Ensure the image is retained by storing a reference
-    Pickup_truck_label.image = Pickup_truck_img
-
-    # Display body types label
-    body_types_label = tkinter.Label(third_page, text="Body Types:", fg=fg_color, font=("Comic Sans MS", 12), bg='#1E1E1E', highlightbackground=highlight_color, highlightcolor=highlight_color)
-    body_types_label.pack()
 
 
 with open('Car.csv','r') as csv_file:
@@ -328,6 +299,7 @@ submit_button.pack()
 # Button to open second page showing body types
 body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ", command=open_third_page, fg='blue', font=("Comic Sans MS", 12), bg='black')
 body_types_button.pack()
+
 
 # quit button for first page
 quit_button=tkinter.Button(root,text='Quit',command=root.quit , fg='red', font=("Comic Sans MS", 12), bg='black')
