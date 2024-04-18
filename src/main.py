@@ -3,7 +3,6 @@ from tkinter import messagebox, ttk
 import csv
 from PIL import ImageTk,Image
 
-
 # stores the choices that the user inputs
 user_choices = {}
 highlight_color = "#333333"
@@ -65,34 +64,41 @@ def OnClick_Submit():
     # Filter data based on user choices
     filtered_data = []
     for car in car_data:
-        match = True
-        for key, value in user_choices.items():
-            # Check if the key is "Price" and the car's price falls within the specified range
-            if key == "Price" and value:
-                price_range = value.split('-')
-                # Remove the 'k' from the price and convert to integer
-                car_price = int(car[key][:-1])
-                min_price = int(price_range[0][:-1])
-                max_price = int(price_range[1][:-1])
-                if not (min_price <= car_price <= max_price):
-                    match = False
-                    break
+         match = True
+    for key, value in user_choices.items():
+        # Check if the key is "Price" and the car's price falls within the specified range
+        if key == "Price" and value:
+            price_range = value.split('-')
+            # Remove the 'k' from the price and convert to integer
+            car_price = int(car[key][:-1])
+            min_price = int(price_range[0][:-1])
+            max_price = int(price_range[1][:-1])
+            if not (min_price <= car_price <= max_price):
+                match = False
+                break
+            if match:
+                filtered_data.append(car)
             elif value and car.get(key, '') != value:
                 match = False
                 break
         if match:
             filtered_data.append(car)
+        elif value and car.get(key, '') != value:
+            match = False
+            break
+    if match:
+        filtered_data.append(car)
 
     print("Filtered Data:", filtered_data)
 
     # Display matching data on the second page
     open_second_page(user_choices, filtered_data)
 
-    # Checks if all fields are filled
-    if all(user_choices.values()):
-        print('good')
-    else:
-        messagebox.showwarning("Warning", "Please Fill all the Fields")
+# Checks if all fields are filled
+if all(user_choices.values()):
+    print('good')
+else:
+    messagebox.showwarning("Warning", "Please Fill all the Fields")
 
 # budget
 budget_label = tkinter.Label(root, text="1. Enter estimated car budget (in dollars):", fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
