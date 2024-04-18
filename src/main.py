@@ -118,7 +118,7 @@ budget_textbox.pack()
 # body type
 size_label=tkinter.Label(root,text="2. Enter your preferred car body type:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 size_label.pack(anchor=tkinter.W)
-choices=['SUV', 'Mini-van', 'Pick-up truck', 'Sedan', 'Convertible', 'Van']
+choices=['SUV', 'Mini-van', 'Pick-up Truck', 'Sedan', 'Convertible', 'Van']
 size_textbox=ttk.Combobox(root, values=choices)
 size_textbox.pack(anchor=tkinter.W)
 
