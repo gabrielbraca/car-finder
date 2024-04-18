@@ -116,7 +116,7 @@ budget_textbox.pack(anchor=tkinter.W)
 budget_textbox.pack()
 
 # body type
-size_label=tkinter.Label(root,text="2. Enter your preferred car body type:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
+size_label=tkinter.Label(root,text="2. Enter your preferred car size:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 size_label.pack(anchor=tkinter.W)
 choices=['SUV', 'Mini-van', 'Pick-up truck', 'Sedan', 'Roadster', 'Convertible', 'Wagon', 'Van']
 size_textbox=ttk.Combobox(root, values=choices)
@@ -155,7 +155,7 @@ gas_textbox.pack(anchor=tkinter.W)
 # make
 brand_label=tkinter.Label(root,text="7. What Car brand do you prefer from the list?:",fg=fg_color, font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
 brand_label.pack(anchor=tkinter.W)
-choices=['Porsche', 'Volvo', 'Ford', 'Toyota', 'Lamborghini','Tesla','Honda', 'Chevrolet', 'Nissan', 'Mazda']
+choices=['Porsche', 'Volvo', 'Ford', 'Toyota', 'Lamborghini','Tesla','Honda', 'Chevrolet', 'Nissan', 'Mazda','Other']
 brand_textbox=ttk.Combobox(root, values=choices)
 brand_textbox.pack(anchor=tkinter.W)
 
@@ -164,7 +164,7 @@ def open_second_page(user_choices, filtered_data):
     second_page.geometry("800x1000")
     second_page.title("Car Answers")
     second_page.configure(bg='#1E1E1E')  # Set the background color of the second page
-    label = tkinter.Label(second_page, bg='#181818', fg=fg_color)
+    label = tkinter.Label(second_page, text="Next", bg='#181818', fg=fg_color)
     label.pack()
 
     # Show user choices
@@ -184,8 +184,6 @@ def open_second_page(user_choices, filtered_data):
     text_widget.insert(tkinter.END, "Exact Matches:\n\n")
 
     # Display exact matches
-
-    filtered_data= get_recommended_cars(user_choices, filtered_data)
     for car in filtered_data:
         display_car_info_text_widget(text_widget, car)
 
@@ -198,23 +196,7 @@ def open_second_page(user_choices, filtered_data):
     # Set the state back to disabled to make it read-only
     text_widget.config(state="disabled")
 
-    quit_button = tkinter.Button(second_page, text='Quit', command=second_page.quit, fg='red', font=("Comic Sans MS", 12), bg='black')
-    quit_button.pack()
-
     second_page.mainloop()
-
-def display_car_info_text_widget(text_widget, car):
-    text_widget.insert(tkinter.END, "Brand: {}\n".format(car['Brand']))
-    text_widget.insert(tkinter.END, "Price: {}\n".format(car['Price']))
-    text_widget.insert(tkinter.END, "Model: {}\n".format(car['Model']))
-    text_widget.insert(tkinter.END, "Year: {}\n".format(car['Year']))
-    text_widget.insert(tkinter.END, "Size: {}\n".format(car['Size']))
-    text_widget.insert(tkinter.END, "County: {}\n".format(car['County']))
-    text_widget.insert(tkinter.END, "Exotic: {}\n".format(car['Exotic']))
-    text_widget.insert(tkinter.END, "Fuel: {}\n".format(car['Fuel']))
-    text_widget.insert(tkinter.END, "Link: {}\n".format(car['Link']))
-    text_widget.insert(tkinter.END, "\n")
-
 def get_recommended_cars(user_choices, car_data):
     recommended_cars = []
     for car in car_data:
@@ -233,17 +215,25 @@ def get_recommended_cars(user_choices, car_data):
 
     print("Recommended Cars:", recommended_cars)  # Debugging print statement
     return recommended_cars
-
+def display_car_info_text_widget(text_widget, car):
+    text_widget.insert(tkinter.END, "Brand: {}\n".format(car['Brand']))
+    text_widget.insert(tkinter.END, "Price: {}\n".format(car['Price']))
+    text_widget.insert(tkinter.END, "Model: {}\n".format(car['Model']))
+    text_widget.insert(tkinter.END, "Year: {}\n".format(car['Year']))
+    text_widget.insert(tkinter.END, "Size: {}\n".format(car['Size']))
+    text_widget.insert(tkinter.END, "County: {}\n".format(car['County']))
+    text_widget.insert(tkinter.END, "Exotic: {}\n".format(car['Exotic']))
+    text_widget.insert(tkinter.END, "Fuel: {}\n".format(car['Fuel']))
+    text_widget.insert(tkinter.END, "Link: {}\n".format(car['Link']))
+    text_widget.insert(tkinter.END, "\n")
 
 with open('Car.csv','r') as csv_file:
     csv_reader = csv.DictReader(csv_file)
-
+# exit
+quit_button=tkinter.Button(root,text='Quit',command=root.quit , fg='red', font=("Comic Sans MS", 12), bg='black')
+quit_button.pack()
 
 # submit
 submit_button=tkinter.Button(root,text='Submit',command=OnClick_Submit , fg='red', font=("Comic Sans MS", 12), bg='black')
 submit_button.pack()
-
-# exit
-quit_button=tkinter.Button(root,text='Quit',command=root.quit , fg='red', font=("Comic Sans MS", 12), bg='black')
-quit_button.pack()
 root.mainloop()

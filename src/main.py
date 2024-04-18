@@ -16,21 +16,6 @@ root.title("Car Questionnaire")
 img = tkinter.PhotoImage(file=r"car.png")
 root.iconphoto(False, img)
 
-# Adds a Ford Picture
-my_img = ImageTk.PhotoImage(Image.open("imporannt.jpg"))
-my_label = tkinter.Label(image=my_img)
-my_label.pack()
-
-# Adds a Lamborghini Huracán Photo
-my_img2 = ImageTk.PhotoImage(Image.open("lamborghini-1819204_640.jpg"))
-my_label2 = tkinter.Label(image=my_img2)
-my_label2.pack()
-
-my_img3 = ImageTk.PhotoImage(Image.open("camaro-4331510_640.jpg"))
-my_label3 = tkinter.Label(image=my_img3)
-my_label3.pack()
-
-
 # Added this line to set the background color
 root.configure(bg='#181818')
 
@@ -159,6 +144,20 @@ choices=['Porsche', 'Volvo', 'Ford', 'Toyota', 'Lamborghini','Tesla','Honda', 'C
 brand_textbox=ttk.Combobox(root, values=choices)
 brand_textbox.pack(anchor=tkinter.W)
 
+# Adds a Ford Picture
+my_img = ImageTk.PhotoImage(Image.open("imporannt.jpg"))
+my_label = tkinter.Label(image=my_img)
+my_label.place(x=500, y=450)
+
+# Adds a Lamborghini Huracán Photo
+my_img2 = ImageTk.PhotoImage(Image.open("lamborghini-1819204_640.jpg"))
+my_label2 = tkinter.Label(image=my_img2)
+my_label2.place(x=360, y=450)
+
+my_img3 = ImageTk.PhotoImage(Image.open("camaro-4331510_640.jpg"))
+my_label3 = tkinter.Label(image=my_img3)
+my_label3.place(x=200, y=450)
+
 def open_second_page(user_choices, filtered_data):
     second_page = tkinter.Tk()
     second_page.geometry("800x1000")
@@ -240,7 +239,7 @@ def get_recommended_cars(user_choices, car_data):
 
 def open_third_page():
     third_page = tkinter.Toplevel()
-    third_page.geometry("2000x2000")
+    third_page.geometry("1000x1000")
     third_page.title("Body Types")
     third_page.configure(bg='#1E1E1E')  # Set the background color of the second page
     back2_button = tkinter.Button(third_page, text='Back', command=third_page.destroy, fg='red', font=("Comic Sans MS", 12), bg='black')
@@ -252,7 +251,7 @@ def open_third_page():
 
     # Create a Label widget to display the image
     sedan_label = tkinter.Label(third_page, image=sedan_img, bg='#1E1E1E')
-    sedan_label.pack()
+    sedan_label.place(x=200, y=65)
 
     # Ensure the image is retained by storing a reference
     sedan_label.image = sedan_img
@@ -262,7 +261,7 @@ def open_third_page():
 
     # Create a Label widget to display the image
     suv_label = tkinter.Label(third_page, image=suv_img, bg='#1E1E1E')
-    suv_label.pack()
+    suv_label.place(x=550, y=50)
 
     # Ensure the image is retained by storing a reference
     suv_label.image = suv_img
@@ -272,7 +271,7 @@ def open_third_page():
 
     # Create a Label widget to display the image
     Convertible_label = tkinter.Label(third_page, image=Convertible_img, bg='#1E1E1E')
-    Convertible_label.pack()
+    Convertible_label.place(x=200, y=330)
 
     # Ensure the image is retained by storing a reference
     Convertible_label.image = Convertible_img
@@ -282,7 +281,7 @@ def open_third_page():
 
     # Create a Label widget to display the image
     minivan_label = tkinter.Label(third_page, image=minivan_img, bg='#1E1E1E')
-    minivan_label.pack()
+    minivan_label.place(x=550, y=300)
 
     # Ensure the image is retained by storing a reference
     minivan_label.image = minivan_img
@@ -291,7 +290,7 @@ def open_third_page():
 
     # Create a Label widget to display the image
     Pickup_label = tkinter.Label(third_page, image=Pickup_img, bg='#1E1E1E')
-    Pickup_label.pack()
+    Pickup_label.place(x=350, y=600)
 
     # Ensure the image is retained by storing a reference
     Pickup_label.image = Pickup_img
