@@ -3,6 +3,7 @@ from tkinter import messagebox, ttk
 import csv
 from PIL import ImageTk,Image
 
+
 # stores the choices that the user inputs
 user_choices = {}
 highlight_color = "#333333"
@@ -33,6 +34,7 @@ car_data = load_data('Car.csv')
 
 # Lighter shade of gray to highlight the letters
 fg_color = "#CCCCCC"
+
 
 def OnClick_Submit():
     budget = budget_textbox.get()
@@ -201,7 +203,7 @@ def open_second_page(user_choices, filtered_data):
     quit_button.pack()
 
     back_button = tkinter.Button(second_page, text='Back', command=second_page.destroy, fg='red', font=("Comic Sans MS", 12), bg='black')
-    back_button.pack()
+    back_button.place(x=10,y=10)
 
     second_page.mainloop()
 
@@ -307,8 +309,8 @@ submit_button=tkinter.Button(root,text='Submit',command=OnClick_Submit , fg='red
 submit_button.pack()
 
 # Button to open second page showing body types
-body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ", command=open_third_page, fg='Yellow', font=("Comic Sans MS", 12), bg='black')
-body_types_button.pack()
+body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ", command=open_third_page, fg='Purple', font=("Comic Sans MS", 12), bg='black')
+body_types_button.place(x=220, y=550)
 
 
 # quit button for first page
