@@ -5,11 +5,66 @@ from PIL import ImageTk,Image
 import tkinter
 def start_page():
     start = tkinter.Tk()
-    start.geometry("800x600")
+    start.geometry("1000x1000")
     start.title("Welcome to Car Questionnaire")
 
     # Added this line to set the background color
     start.configure(bg='#181818')
+
+    Ford_img = ImageTk.PhotoImage(Image.open("Ford.jpeg"))
+
+    # Create a Label widget to display the image
+    Ford_label = tkinter.Label(start, image=Ford_img, bg='#1E1E1E')
+    Ford_label.place(x=20, y=200)
+
+    Chevorlette_img = ImageTk.PhotoImage(Image.open("Chevorlette.jpeg"))
+
+    # Create a Label widget to display the image
+    Chevorlette_label = tkinter.Label(start, image=Chevorlette_img, bg='#1E1E1E')
+    Chevorlette_label.place(x=350, y=200)
+
+    Honda_img = ImageTk.PhotoImage(Image.open("Honda.jpeg"))
+
+    # Create a Label widget to display the image
+    Honda_label = tkinter.Label(start, image=Honda_img, bg='#1E1E1E')
+    Honda_label.place(x=680, y=200)
+
+    Lambo_img = ImageTk.PhotoImage(Image.open("Lambo.jpeg"))
+
+    # Create a Label widget to display the image
+    Lambo_label = tkinter.Label(start, image=Lambo_img, bg='#1E1E1E')
+    Lambo_label.place(x=20, y=400)
+
+    Mazda_img = ImageTk.PhotoImage(Image.open("Mazda.jpeg"))
+
+    # Create a Label widget to display the image
+    Mazda_label = tkinter.Label(start, image=Mazda_img, bg='#1E1E1E')
+    Mazda_label.place(x=350, y=400)
+
+    Nissan_img = ImageTk.PhotoImage(Image.open("Nissan.jpeg"))
+
+    # Create a Label widget to display the image
+    Nissan_label = tkinter.Label(start, image=Nissan_img, bg='#1E1E1E')
+    Nissan_label.place(x=680, y=400)
+
+    Porche_img = ImageTk.PhotoImage(Image.open("Porche.jpeg"))
+
+    # Create a Label widget to display the image
+    Porche_label = tkinter.Label(start, image=Porche_img, bg='#1E1E1E')
+    Porche_label.place(x=20, y=600)
+
+    Tesla_img = ImageTk.PhotoImage(Image.open("Tesla.jpeg"))
+
+    # Create a Label widget to display the image
+    Tesla_label = tkinter.Label(start, image=Tesla_img, bg='#1E1E1E')
+    Tesla_label.place(x=350, y=600)
+
+    Toyota_img = ImageTk.PhotoImage(Image.open("Toyota.jpeg"))
+
+    # Create a Label widget to display the image
+    Toyota_label = tkinter.Label(start, image=Toyota_img, bg='#1E1E1E')
+    Toyota_label.place(x=680, y=600)
+
 
     # Function to open the main page and close the start page
     def open_main_page():
