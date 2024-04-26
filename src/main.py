@@ -17,13 +17,13 @@ def start_page():
     Ford_label = tkinter.Label(start, image=Ford_img, bg='#1E1E1E')
     Ford_label.place(x=20, y=200)
 
-    Chevorlette_img = ImageTk.PhotoImage(Image.open("Chevorlette.jpeg"))
+    Chevorlette_img = ImageTk.PhotoImage(Image.open("Chevorlette.jpg"))
 
     # Create a Label widget to display the image
     Chevorlette_label = tkinter.Label(start, image=Chevorlette_img, bg='#1E1E1E')
     Chevorlette_label.place(x=350, y=200)
 
-    Honda_img = ImageTk.PhotoImage(Image.open("Honda.jpeg"))
+    Honda_img = ImageTk.PhotoImage(Image.open("Honda.jpg"))
 
     # Create a Label widget to display the image
     Honda_label = tkinter.Label(start, image=Honda_img, bg='#1E1E1E')
@@ -47,7 +47,7 @@ def start_page():
     Nissan_label = tkinter.Label(start, image=Nissan_img, bg='#1E1E1E')
     Nissan_label.place(x=680, y=400)
 
-    Porche_img = ImageTk.PhotoImage(Image.open("Porche.jpeg"))
+    Porche_img = ImageTk.PhotoImage(Image.open("Porche.jpg"))
 
     # Create a Label widget to display the image
     Porche_label = tkinter.Label(start, image=Porche_img, bg='#1E1E1E')
@@ -59,7 +59,13 @@ def start_page():
     Tesla_label = tkinter.Label(start, image=Tesla_img, bg='#1E1E1E')
     Tesla_label.place(x=350, y=600)
 
-    Toyota_img = ImageTk.PhotoImage(Image.open("Toyota.jpeg"))
+    #volvo_img = ImageTk.PhotoImage(Image.open("volvo.jpg"))
+
+    # Create a Label widget to display the image
+    #volvo_label = tkinter.Label(start, image=volvo_img, bg='#1E1E1E')
+    #volvo_label.place(x=300, y=700)
+
+    Toyota_img = ImageTk.PhotoImage(Image.open("Toyota.jpg"))
 
     # Create a Label widget to display the image
     Toyota_label = tkinter.Label(start, image=Toyota_img, bg='#1E1E1E')
@@ -76,7 +82,7 @@ def start_page():
     welcome_label.pack(pady=50)
 
     start_button = tkinter.Button(start, text="Start Questionnaire", command=open_main_page, fg='black', font=("Comic Sans MS", 18), bg='#CCCCCC')
-    start_button.pack(pady=20)
+    start_button.pack(pady=8)
 
     start.mainloop()
 
@@ -120,6 +126,10 @@ def main_page():
         year = year_textbox.get()
         gas = gas_textbox.get()
         brand = brand_textbox.get()
+
+
+
+
 
         # Check if any of the fields are empty
         if not all([budget, size, county, exotic, year, gas, brand]):
@@ -241,16 +251,16 @@ def main_page():
     # Adds a Ford Picture
     my_img = ImageTk.PhotoImage(Image.open("imporannt.jpg"))
     my_label = tkinter.Label(image=my_img)
-    my_label.place(x=500, y=480)
+    my_label.place(x=500, y=520)
 
     # Adds a Lamborghini Huracán Photo
     my_img2 = ImageTk.PhotoImage(Image.open("lamborghini-1819204_640.jpg"))
     my_label2 = tkinter.Label(image=my_img2)
-    my_label2.place(x=360, y=480)
+    my_label2.place(x=360, y=525)
 
     my_img3 = ImageTk.PhotoImage(Image.open("camaro-4331510_640.jpg"))
     my_label3 = tkinter.Label(image=my_img3)
-    my_label3.place(x=200, y=480)
+    my_label3.place(x=200, y=520)
 
     def open_second_page(user_choices, filtered_data):
         second_page = tkinter.Tk()
@@ -397,10 +407,26 @@ def main_page():
                                    bg='black')
     submit_button.pack()
 
+    # Function to reset all the textboxes
+    def reset_textboxes():
+        budget_textbox.set('')
+        size_textbox.set('')
+        county_textbox.set('')
+        exotic_textbox.set('')
+        year_textbox.set('')
+        gas_textbox.set('')
+        brand_textbox.set('')
+
+    # Reset button for questioning pages
+    reset_button = tkinter.Button(root, text='Reset', command=reset_textboxes, fg='red',
+                                  font=("Comic Sans MS", 18), bg='black')
+    reset_button.place(x=0, y=415)
+
     # Button to open second page showing body types
     body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ",
                                        command=open_third_page, fg='Purple', font=("Comic Sans MS", 18), bg='black')
-    body_types_button.place(x=150, y=550)
+    body_types_button.place(x=100, y=600)
+
 
     # quit button for first page
     quit_button = tkinter.Button(root, text='Quit', command=root.quit, fg='red', font=("Comic Sans MS", 18), bg='black')
