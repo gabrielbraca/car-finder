@@ -75,7 +75,7 @@ def start_page():
     welcome_label = tkinter.Label(start, text="Welcome to Car Questionnaire!", fg="#CCCCCC", bg='#181818', font=("Comic Sans MS", 20))
     welcome_label.pack(pady=50)
 
-    start_button = tkinter.Button(start, text="Start Questionnaire", command=open_main_page, fg='black', font=("Comic Sans MS", 12), bg='#CCCCCC')
+    start_button = tkinter.Button(start, text="Start Questionnaire", command=open_main_page, fg='black', font=("Comic Sans MS", 18), bg='#CCCCCC')
     start_button.pack(pady=20)
 
     start.mainloop()
@@ -179,7 +179,7 @@ def main_page():
 
     # budget
     budget_label = tkinter.Label(root, text="1. Enter estimated car budget (in dollars):", fg=fg_color,
-                                 font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color,
+                                 font=("Comic Sans MS", 17), bg='#181818', highlightbackground=highlight_color,
                                  highlightcolor=highlight_color)
     budget_label.pack(anchor=tkinter.W)
     choices = ['10k-20k', '20k-40k', '40k-60k', '60k-85k', '85k-100k', '100k-600k']
@@ -189,7 +189,7 @@ def main_page():
 
     # body type
     size_label = tkinter.Label(root, text="2. Enter your preferred car body type:", fg=fg_color,
-                               font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color,
+                               font=("Comic Sans MS", 17), bg='#181818', highlightbackground=highlight_color,
                                highlightcolor=highlight_color)
     size_label.pack(anchor=tkinter.W)
     choices = ['SUV', 'Mini-van', 'Pick-up Truck', 'Sedan', 'Convertible', 'Van']
@@ -197,7 +197,7 @@ def main_page():
     size_textbox.pack(anchor=tkinter.W)
 
     # county
-    county_label = tkinter.Label(root, text="3. Enter your county location:", fg=fg_color, font=("Comic Sans MS", 12),
+    county_label = tkinter.Label(root, text="3. Enter your county location:", fg=fg_color, font=("Comic Sans MS", 17),
                                  bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
     county_label.pack(anchor=tkinter.W)
     choices = ['Morris', 'Essex', 'Bergen', 'Passaic']
@@ -205,7 +205,7 @@ def main_page():
     county_textbox.pack(anchor=tkinter.W)
 
     # exotic
-    exotic_label = tkinter.Label(root, text="4. Do you like exotic cars?:", fg=fg_color, font=("Comic Sans MS", 12),
+    exotic_label = tkinter.Label(root, text="4. Do you like exotic cars?:", fg=fg_color, font=("Comic Sans MS", 17),
                                  bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
     exotic_label.pack(anchor=tkinter.W)
     choices = ['Yes', 'No']
@@ -213,7 +213,7 @@ def main_page():
     exotic_textbox.pack(anchor=tkinter.W)
 
     # year
-    year_label = tkinter.Label(root, text="5. What year?:", fg=fg_color, font=("Comic Sans MS", 12), bg='#181818',
+    year_label = tkinter.Label(root, text="5. What year?:", fg=fg_color, font=("Comic Sans MS", 17), bg='#181818',
                                highlightbackground=highlight_color, highlightcolor=highlight_color)
     year_label.pack(anchor=tkinter.W)
     choices = ['2019', '2020', '2021', '2022', '2023', '2024', ]
@@ -221,7 +221,7 @@ def main_page():
     year_textbox.pack(anchor=tkinter.W)
 
     # gas type
-    gas_label = tkinter.Label(root, text="6. Gas, Hybrid, or Electric?:", fg=fg_color, font=("Comic Sans MS", 12),
+    gas_label = tkinter.Label(root, text="6. Gas, Hybrid, or Electric?:", fg=fg_color, font=("Comic Sans MS", 17),
                               bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
     gas_label.pack(anchor=tkinter.W)
     choices = ['Hybrid', 'Electric', 'Gas']
@@ -230,7 +230,7 @@ def main_page():
 
     # make
     brand_label = tkinter.Label(root, text="7. What Car brand do you prefer from the list?:", fg=fg_color,
-                                font=("Comic Sans MS", 12), bg='#181818', highlightbackground=highlight_color,
+                                font=("Comic Sans MS", 17), bg='#181818', highlightbackground=highlight_color,
                                 highlightcolor=highlight_color)
     brand_label.pack(anchor=tkinter.W)
     choices = ['Porsche', 'Volvo', 'Ford', 'Toyota', 'Lamborghini', 'Tesla', 'Honda', 'Chevrolet', 'Nissan', 'Mazda',
@@ -241,16 +241,16 @@ def main_page():
     # Adds a Ford Picture
     my_img = ImageTk.PhotoImage(Image.open("imporannt.jpg"))
     my_label = tkinter.Label(image=my_img)
-    my_label.place(x=500, y=450)
+    my_label.place(x=500, y=480)
 
     # Adds a Lamborghini Huracán Photo
     my_img2 = ImageTk.PhotoImage(Image.open("lamborghini-1819204_640.jpg"))
     my_label2 = tkinter.Label(image=my_img2)
-    my_label2.place(x=360, y=450)
+    my_label2.place(x=360, y=480)
 
     my_img3 = ImageTk.PhotoImage(Image.open("camaro-4331510_640.jpg"))
     my_label3 = tkinter.Label(image=my_img3)
-    my_label3.place(x=200, y=450)
+    my_label3.place(x=200, y=480)
 
     def open_second_page(user_choices, filtered_data):
         second_page = tkinter.Tk()
@@ -292,11 +292,11 @@ def main_page():
 
         # Quit button for second page
         quit_button = tkinter.Button(second_page, text='Quit', command=second_page.quit, fg='red',
-                                     font=("Comic Sans MS", 12), bg='black')
+                                     font=("Comic Sans MS", 15), bg='black')
         quit_button.pack()
 
         back_button = tkinter.Button(second_page, text='Back', command=second_page.destroy, fg='red',
-                                     font=("Comic Sans MS", 12), bg='black')
+                                     font=("Comic Sans MS", 15), bg='black')
         back_button.place(x=10, y=10)
 
         second_page.mainloop()
@@ -338,8 +338,8 @@ def main_page():
         third_page.title("Body Types")
         third_page.configure(bg='#1E1E1E')  # Set the background color of the second page
         back2_button = tkinter.Button(third_page, text='Back', command=third_page.destroy, fg='red',
-                                      font=("Comic Sans MS", 12), bg='black')
-        back2_button.pack()
+                                      font=("Comic Sans MS", 15), bg='black')
+        back2_button.place(x=10,y=10)
 
         # Load the sedan image
         sedan_img = ImageTk.PhotoImage(Image.open("Sedan.png"))
@@ -393,17 +393,17 @@ def main_page():
         csv_reader = csv.DictReader(csv_file)
 
     # submit for first page
-    submit_button = tkinter.Button(root, text='Submit', command=OnClick_Submit, fg='red', font=("Comic Sans MS", 12),
+    submit_button = tkinter.Button(root, text='Submit', command=OnClick_Submit, fg='red', font=("Comic Sans MS", 18),
                                    bg='black')
     submit_button.pack()
 
     # Button to open second page showing body types
     body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ",
-                                       command=open_third_page, fg='Purple', font=("Comic Sans MS", 12), bg='black')
-    body_types_button.place(x=220, y=550)
+                                       command=open_third_page, fg='Purple', font=("Comic Sans MS", 18), bg='black')
+    body_types_button.place(x=150, y=550)
 
     # quit button for first page
-    quit_button = tkinter.Button(root, text='Quit', command=root.quit, fg='red', font=("Comic Sans MS", 12), bg='black')
+    quit_button = tkinter.Button(root, text='Quit', command=root.quit, fg='red', font=("Comic Sans MS", 18), bg='black')
     quit_button.pack()
     root.mainloop()
 start_page()
