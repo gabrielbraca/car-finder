@@ -430,7 +430,7 @@ def main_page():
     # Button to open second page showing body types
     body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ",
                                        command=open_third_page, fg='Purple', font=("Comic Sans MS", 18), bg='black')
-    body_types_button.place(x=80, y=600)
+    body_types_button.place(x=120, y=600)
 
 
     # quit button for first page
