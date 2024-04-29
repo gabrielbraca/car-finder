@@ -8,10 +8,10 @@ def extract_digits(value):
     numeric = ''
     # Loop through each character in the string
     for char in value:
-        # If the character is between 0 and 9, append it to the numeric string
+        # it will append numbers that are between 0 and 9 and turn it to numeric string
         if '0' <= char <= '9':
             numeric += char
-    # Convert the collected digits into an integer
+    # Turns collected digits into an integer
     return int(numeric)
 
 def start_page():
@@ -70,11 +70,6 @@ def start_page():
     Tesla_label = tkinter.Label(start, image=Tesla_img, bg='#1E1E1E')
     Tesla_label.place(x=350, y=600)
 
-    #volvo_img = ImageTk.PhotoImage(Image.open("volvo.jpg"))
-
-    # Create a Label widget to display the image
-    #volvo_label = tkinter.Label(start, image=volvo_img, bg='#1E1E1E')
-    #volvo_label.place(x=300, y=700)
 
     Toyota_img = ImageTk.PhotoImage(Image.open("Toyota.jpg"))
 
@@ -114,7 +109,7 @@ def main_page():
     # Added this line to set the background color
     root.configure(bg='#181818')
 
-    # Function to load data from CSV
+    # Loads the data from CSV
     def load_data(csv_file):
         data = []
         with open(csv_file, 'r') as file:
@@ -123,7 +118,7 @@ def main_page():
                 data.append(row)
         return data
 
-    # Load data from CSV
+    # Loads data from CSV
     car_data = load_data('Car.csv')
 
     # Lighter shade of gray to highlight the letters
@@ -146,7 +141,7 @@ def main_page():
             # Return if any field is empty
             return
 
-        # Made a Dictionary to repeat responses back to you almost as a way of saying are you sure?
+        # Made a dictionary to repeat responses back to you
         user_choices["Price"] = budget
         user_choices["Size"] = size
         user_choices["County"] = county
@@ -177,7 +172,7 @@ def main_page():
                     match = False
                     break
 
-            # If all conditions are met, add the car to the filtered data
+            # If all user input matches a car that is in the csv it will print out
             if match:
                 filtered_data.append(car)
         # Open the second page with unique filtered data
@@ -272,7 +267,8 @@ def main_page():
         second_page = tkinter.Tk()
         second_page.geometry("800x1000")
         second_page.title("Car Answers")
-        second_page.configure(bg='#1E1E1E')  # Set the background color of the second page
+        second_page.configure(bg='#1E1E1E')
+        # Set the background color of the second page
         label = tkinter.Label(second_page, bg='#181818', fg=fg_color)
         label.pack()
 
@@ -286,7 +282,7 @@ def main_page():
         text_widget = tkinter.Text(second_page, height=20, width=80, state='normal')
         text_widget.pack()
 
-        # Set the state to normal to allow inserting text
+        # Set the state too normal to allow inserting text
         text_widget.config(state="normal")
 
         # Add a heading for exact matches
@@ -303,7 +299,7 @@ def main_page():
         for car in recommended_cars:
             display_car_info_text_widget(text_widget, car)
 
-        # Set the state back to disabled to make it read-only
+        # Set the state back to disabled to make it read only
         text_widget.config(state="disabled")
 
         # Quit button for second page
@@ -347,7 +343,8 @@ def main_page():
                     car["Size"] == user_choices["Size"]):
                 recommended_cars.append(car)
 
-        print("Recommended Cars:", recommended_cars)  # Debugging print statement
+        # Debugging print statement
+        print("Recommended Cars:", recommended_cars)
         return recommended_cars
 
     # making a third page
@@ -355,7 +352,8 @@ def main_page():
         third_page = tkinter.Toplevel()
         third_page.geometry("1000x1000")
         third_page.title("Body Types")
-        third_page.configure(bg='#1E1E1E')  # Set the background color of the second page
+        third_page.configure(bg='#1E1E1E')
+        # Set the background color of the second page
 
         # back button for third page
         back2_button = tkinter.Button(third_page, text='Back', command=third_page.destroy, fg='red',
