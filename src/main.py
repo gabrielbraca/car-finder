@@ -8,7 +8,7 @@ def extract_digits(value):
     numeric = ''
     # Loop through each character in the string
     for char in value:
-        # If the character is between '0' and '9', append it to the numeric string
+        # If the character is between 0 and 9, append it to the numeric string
         if '0' <= char <= '9':
             numeric += char
     # Convert the collected digits into an integer
