@@ -192,7 +192,7 @@ def main_page():
                                  font=("Comic Sans MS", 17), bg='#181818', highlightbackground=highlight_color,
                                  highlightcolor=highlight_color)
     budget_label.pack(anchor=tkinter.W)
-    choices = ['10k-20k', '20k-40k', '40k-60k', '60k-85k', '85k-100k', '100k-600k']
+    choices = ['10k-20k', '20k-40k', '40k-60k', '60k-85k', '85k-600k']
     budget_textbox = ttk.Combobox(root, values=choices)
     budget_textbox.pack(anchor=tkinter.W)
     budget_textbox.pack()
