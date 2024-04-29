@@ -187,7 +187,7 @@ def main_page():
     else:
         messagebox.showwarning("Warning", "Please Fill all the Fields")
 
-    # budget
+    # asking user there budget
     budget_label = tkinter.Label(root, text="1. Enter estimated car budget (in dollars):", fg=fg_color,
                                  font=("Comic Sans MS", 17), bg='#181818', highlightbackground=highlight_color,
                                  highlightcolor=highlight_color)
@@ -197,7 +197,7 @@ def main_page():
     budget_textbox.pack(anchor=tkinter.W)
     budget_textbox.pack()
 
-    # body type
+    # asking user what body type
     size_label = tkinter.Label(root, text="2. Enter your preferred car body type:", fg=fg_color,
                                font=("Comic Sans MS", 17), bg='#181818', highlightbackground=highlight_color,
                                highlightcolor=highlight_color)
@@ -206,7 +206,7 @@ def main_page():
     size_textbox = ttk.Combobox(root, values=choices)
     size_textbox.pack(anchor=tkinter.W)
 
-    # county
+    # asking user what county
     county_label = tkinter.Label(root, text="3. Enter your county location:", fg=fg_color, font=("Comic Sans MS", 17),
                                  bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
     county_label.pack(anchor=tkinter.W)
@@ -214,7 +214,7 @@ def main_page():
     county_textbox = ttk.Combobox(root, values=choices)
     county_textbox.pack(anchor=tkinter.W)
 
-    # exotic
+    # asking user if exotic or not
     exotic_label = tkinter.Label(root, text="4. Do you like exotic cars?:", fg=fg_color, font=("Comic Sans MS", 17),
                                  bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
     exotic_label.pack(anchor=tkinter.W)
@@ -222,7 +222,7 @@ def main_page():
     exotic_textbox = ttk.Combobox(root, values=choices)
     exotic_textbox.pack(anchor=tkinter.W)
 
-    # year
+    # asking user for year
     year_label = tkinter.Label(root, text="5. What year?:", fg=fg_color, font=("Comic Sans MS", 17), bg='#181818',
                                highlightbackground=highlight_color, highlightcolor=highlight_color)
     year_label.pack(anchor=tkinter.W)
@@ -230,7 +230,7 @@ def main_page():
     year_textbox = ttk.Combobox(root, values=choices)
     year_textbox.pack(anchor=tkinter.W)
 
-    # gas type
+    # asking user for gas type
     gas_label = tkinter.Label(root, text="6. Gas, Hybrid, or Electric?:", fg=fg_color, font=("Comic Sans MS", 17),
                               bg='#181818', highlightbackground=highlight_color, highlightcolor=highlight_color)
     gas_label.pack(anchor=tkinter.W)
@@ -238,7 +238,7 @@ def main_page():
     gas_textbox = ttk.Combobox(root, values=choices)
     gas_textbox.pack(anchor=tkinter.W)
 
-    # make
+    # asking user for make make
     brand_label = tkinter.Label(root, text="7. What Car brand do you prefer from the list?:", fg=fg_color,
                                 font=("Comic Sans MS", 17), bg='#181818', highlightbackground=highlight_color,
                                 highlightcolor=highlight_color)
@@ -262,6 +262,7 @@ def main_page():
     my_label3 = tkinter.Label(image=my_img3)
     my_label3.place(x=200, y=520)
 
+    # making a second page
     def open_second_page(user_choices, filtered_data):
         second_page = tkinter.Tk()
         second_page.geometry("800x1000")
@@ -305,6 +306,7 @@ def main_page():
                                      font=("Comic Sans MS", 15), bg='black')
         quit_button.pack()
 
+        # making a back button
         back_button = tkinter.Button(second_page, text='Back', command=second_page.destroy, fg='red',
                                      font=("Comic Sans MS", 15), bg='black')
         back_button.place(x=10, y=10)
@@ -342,11 +344,14 @@ def main_page():
         print("Recommended Cars:", recommended_cars)  # Debugging print statement
         return recommended_cars
 
+    # making a third page
     def open_third_page():
         third_page = tkinter.Toplevel()
         third_page.geometry("1000x1000")
         third_page.title("Body Types")
         third_page.configure(bg='#1E1E1E')  # Set the background color of the second page
+
+        # back button for third page
         back2_button = tkinter.Button(third_page, text='Back', command=third_page.destroy, fg='red',
                                       font=("Comic Sans MS", 15), bg='black')
         back2_button.place(x=10,y=10)
@@ -425,7 +430,7 @@ def main_page():
     # Button to open second page showing body types
     body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ",
                                        command=open_third_page, fg='Purple', font=("Comic Sans MS", 18), bg='black')
-    body_types_button.place(x=100, y=600)
+    body_types_button.place(x=150, y=600)
 
 
     # quit button for first page
