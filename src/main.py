@@ -4,7 +4,7 @@ from PIL import ImageTk,Image
 import tkinter
 
 # Function to extract digits manually from a given string
-def extract_digits_manually(value):
+def extract_digits(value):
     numeric = ''
     # Loop through each character in the string
     for char in value:
@@ -334,12 +334,12 @@ def main_page():
         # Loop through the car data
         for car in car_data:
             # Extract numeric value from the price
-            car_price = extract_digits_manually(car["Price"])  # Using the manual approach
+            car_price = extract_digits(car["Price"])
 
             # Get the min and max price from user choices
             price_range = user_choices["Price"].split('-')
-            min_price = extract_digits_manually(price_range[0])
-            max_price = extract_digits_manually(price_range[1])
+            min_price = extract_digits(price_range[0])
+            max_price = extract_digits(price_range[1])
 
             # Check if the car matches the user's criteria
             if (min_price <= car_price <= max_price and
