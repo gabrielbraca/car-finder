@@ -1,8 +1,19 @@
-import tkinter
 from tkinter import messagebox, ttk
 import csv
 from PIL import ImageTk,Image
 import tkinter
+
+# Function to extract digits manually from a given string
+def extract_digits_manually(value):
+    numeric = ''
+    # Loop through each character in the string
+    for char in value:
+        # If the character is between '0' and '9', append it to the numeric string
+        if '0' <= char <= '9':
+            numeric += char
+    # Convert the collected digits into an integer
+    return int(numeric)
+
 def start_page():
     start = tkinter.Tk()
     start.geometry("1000x1000")
@@ -128,9 +139,6 @@ def main_page():
         brand = brand_textbox.get()
 
 
-
-
-
         # Check if any of the fields are empty
         if not all([budget, size, county, exotic, year, gas, brand]):
             # Show a warning message
@@ -148,34 +156,31 @@ def main_page():
         user_choices["Brand"] = brand
         print("User Choices:", user_choices)
 
-        # Filter data based on user choices
         filtered_data = []
+
+        # Loop through each car and apply the filtering logic
         for car in car_data:
             match = True
-        for key, value in user_choices.items():
-            # Check if the key is "Price" and the car's price falls within the specified range
-            if key == "Price" and value:
-                price_range = value.split('-')
-                # Remove the 'k' from the price and convert to integer
-                car_price = int(car[key][:-1])
-                min_price = int(price_range[0][:-1])
-                max_price = int(price_range[1][:-1])
-                if not (min_price <= car_price <= max_price):
+
+            # Loop through user choices to check if the car matches the user's selections
+            for key, value in user_choices.items():
+                if key == "Price" and value:
+                    # Price range logic: convert 'k' to thousands and check if within range
+                    price_range = [int(p[:-1]) for p in value.split('-')]
+                    min_price, max_price = price_range[0], price_range[1]
+                    car_price = int(car[key][:-1])
+                    if not (min_price <= car_price <= max_price):
+                        match = False
+                        break
+                elif car.get(key) != value:
+                    # If any other key doesn't match, set match to False and break
                     match = False
                     break
-                if match:
-                    filtered_data.append(car)
-                elif value and car.get(key, '') != value:
-                    match = False
-                    break
+
+            # If all conditions are met, add the car to the filtered data
             if match:
                 filtered_data.append(car)
-            elif value and car.get(key, '') != value:
-                match = False
-                break
-        if match:
-            filtered_data.append(car)
-
+        # Open the second page with unique filtered data
         print("Filtered Data:", filtered_data)
 
         # Display matching data on the second page
@@ -238,7 +243,7 @@ def main_page():
     gas_textbox = ttk.Combobox(root, values=choices)
     gas_textbox.pack(anchor=tkinter.W)
 
-    # asking user for make make
+    # asking user for make
     brand_label = tkinter.Label(root, text="7. What Car brand do you prefer from the list?:", fg=fg_color,
                                 font=("Comic Sans MS", 17), bg='#181818', highlightbackground=highlight_color,
                                 highlightcolor=highlight_color)
@@ -302,8 +307,7 @@ def main_page():
         text_widget.config(state="disabled")
 
         # Quit button for second page
-        quit_button = tkinter.Button(second_page, text='Quit', command=second_page.quit, fg='red',
-                                     font=("Comic Sans MS", 15), bg='black')
+        quit_button = tkinter.Button(second_page, text='Quit', command=second_page.destroy, fg='red', font=("Comic Sans MS", 15), bg='black')
         quit_button.pack()
 
         # making a back button
@@ -327,13 +331,15 @@ def main_page():
 
     def get_recommended_cars(user_choices, car_data):
         recommended_cars = []
+        # Loop through the car data
         for car in car_data:
-            # Remove non-numeric characters from the car's price and convert it to an integer
-            car_price = int(''.join(filter(str.isdigit, car["Price"])))
-            # Compare the price without non-numeric characters
+            # Extract numeric value from the price
+            car_price = extract_digits_manually(car["Price"])  # Using the manual approach
+
+            # Get the min and max price from user choices
             price_range = user_choices["Price"].split('-')
-            min_price = int(''.join(filter(str.isdigit, price_range[0])))
-            max_price = int(''.join(filter(str.isdigit, price_range[1])))
+            min_price = extract_digits_manually(price_range[0])
+            max_price = extract_digits_manually(price_range[1])
 
             # Check if the car matches the user's criteria
             if (min_price <= car_price <= max_price and
@@ -430,11 +436,11 @@ def main_page():
     # Button to open second page showing body types
     body_types_button = tkinter.Button(root, text="Don't know what body types are? Click here to find out ",
                                        command=open_third_page, fg='Purple', font=("Comic Sans MS", 18), bg='black')
-    body_types_button.place(x=120, y=600)
+    body_types_button.place(x=160, y=600)
 
 
     # quit button for first page
-    quit_button = tkinter.Button(root, text='Quit', command=root.quit, fg='red', font=("Comic Sans MS", 18), bg='black')
+    quit_button = tkinter.Button(root, text='Quit', command=root.destroy, fg='red', font=("Comic Sans MS", 18), bg='black')
     quit_button.pack()
     root.mainloop()
 start_page()
